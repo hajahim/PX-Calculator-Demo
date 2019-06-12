@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import logo from './logo.svg'
+import './App.css'
+import Calculator from './calculator'
+import data from './calculator_config.json'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  constructor () {
+    super()
+    this.state = {
+      calculator: {}
+    }
+  }
+
+  componentWillMount () {
+    this.setState({
+      calculator: data
+    })
+  }
+
+  render () {
+    const { calculator } = this.state
+    return (
+      <div className = "page-wrapper">
+        <header className = "l-heading">
+          <img src = {logo} className = "l-heading-logo" alt = "logo" />
+        </header>
+        <main className = "l-main">
+          <Calculator calculatorInstance = {calculator} />
+        </main>
+        <footer className = "l-footer">
+        </footer>
+      </div>
+    )
+  }
+
 }
 
-export default App;
+export default App

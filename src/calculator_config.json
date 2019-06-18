@@ -45,6 +45,11 @@
       "value": "+",
       "action": "addHistory"
     },
+	{
+      "label": "/",
+      "value": "/",
+      "action": "addHistory"
+    },
     {
       "label": "=",
       "action": "evaluate"

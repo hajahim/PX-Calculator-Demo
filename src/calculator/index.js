@@ -61,6 +61,9 @@ class Calculator extends Component {
           case ' + ': {
             return parseInt(aggregate) + parseInt(currentValue)
           }
+		  case ' / ': {
+            return parseInt(aggregate) / parseInt(currentValue)
+          }
           default: {
             return parseInt(aggregate) * parseInt(currentValue)
           }
